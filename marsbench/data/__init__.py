@@ -246,9 +246,6 @@ def get_dataset(
             logger.warning(f"Using default repository ID: {cfg.repo_id}")
         
         if not is_hf_logged_in():
-            print("Hugging Face user not logged in. Please run `huggingface-cli login` or login below.")
-            login() 
-        else:
             logger.warning("Hugging Face user not logged in. Please run `huggingface-cli login` or login below.")
             login() 
         else:

@@ -249,7 +249,10 @@ def get_dataset(
             print("Hugging Face user not logged in. Please run `huggingface-cli login` or login below.")
             login() 
         else:
-            print("Hugging Face user is logged in")
+            logger.warning("Hugging Face user not logged in. Please run `huggingface-cli login` or login below.")
+            login() 
+        else:
+            logger.info("Hugging Face user is logged in")
 
         # hf class
         hf_class = HF_REGISTRY[cfg.task]["class"]

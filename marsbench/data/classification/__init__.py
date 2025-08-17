@@ -11,6 +11,7 @@ from .Frost_Classification import Frost_Classification
 from .Landmark_Classification import Landmark_Classification
 from .Multi_Label_MER import Multi_Label_MER
 from .Surface_Classification import Surface_Classification
+from .HFClassification import HFClassification
 
 __all__ = [
     "BaseClassificationDataset",
@@ -23,4 +24,5 @@ __all__ = [
     "Change_Classification_HiRISE",
     "Change_Classification_CTX",
     "Multi_Label_MER",
+    "HFClassification",
 ]

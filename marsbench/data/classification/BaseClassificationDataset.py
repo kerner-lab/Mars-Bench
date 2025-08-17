@@ -27,7 +27,7 @@ class BaseClassificationDataset(Dataset, ABC):
     """Abstract base class for custom datasets.
 
     Attributes:
-        data_dir (str): Directory where data is stored.
+        data_dir (str, optional): Directory where data is stored.
         transform (callable, optional): A function/transform to apply to the images.
 
     Methods:
@@ -49,7 +49,6 @@ class BaseClassificationDataset(Dataset, ABC):
         transform: Optional[Callable[[Image.Image], torch.Tensor]] = None,
     ):
         self.cfg = cfg
-        # Map image types to PIL modes
         IMAGE_MODES = {"rgb": "RGB", "grayscale": "L", "l": "L"}
         requested_mode = cfg.data.image_type.lower().strip()
         self.image_type = IMAGE_MODES.get(requested_mode)
@@ -61,17 +60,21 @@ class BaseClassificationDataset(Dataset, ABC):
             self.image_type = "RGB"
         self.data_dir = data_dir
         self.transform = transform
-        logger.info(f"Loading {self.__class__.__name__} from {data_dir}")
+        if self.data_dir:
+            logger.info(f"Loading {self.__class__.__name__} from {self.data_dir}")
+        else:
+             logger.info(f"Loading {self.__class__.__name__} from HF")
         self.image_paths, self.gts = self._load_data()
-        logger.info(f"Loaded {len(self.image_paths)} images")
+        logger.info(f"Loaded {len(self.image_paths)} images with {len(set(self.gts))} unique classes")
 
-        self.cfg.mapping = load_mapping(self.data_dir, cfg.data.num_classes)
+        if data_dir:
+            self.cfg.mapping = load_mapping(self.data_dir, cfg.data.num_classes)
 
-        # Validate image extensions
-        for image_path in self.image_paths:
-            if not image_path.endswith(tuple(cfg.data.valid_image_extensions)):
-                logger.error(f"Invalid image format: {image_path}")
-                raise ValueError(f"Invalid image format: {image_path}")
+        if self.data_dir:
+            for image_path in self.image_paths:
+                if not image_path.endswith(tuple(cfg.data.valid_image_extensions)):
+                    logger.error(f"Invalid image format: {image_path}")
+                    raise ValueError(f"Invalid image format: {image_path}")
 
         logger.info(
             f"Dataset initialized with mode: {self.image_type}, " f"transforms: {'applied' if transform else 'none'}"

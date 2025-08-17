@@ -10,6 +10,7 @@ from .MarsSegMER import MarsSegMER
 from .MarsSegMSL import MarsSegMSL
 from .MMLS import MMLS
 from .S5Mars import S5Mars
+from .HFSegmentation import HFSegmentation
 
 __all__ = [
     "BaseSegmentationDataset",
@@ -21,4 +22,6 @@ __all__ = [
     "S5Mars",
     "Crater_Binary_Segmentation",
     "Crater_Multi_Segmentation",
+    "HFSegmentation",
+
 ]

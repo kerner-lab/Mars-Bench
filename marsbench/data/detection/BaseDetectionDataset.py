@@ -26,7 +26,7 @@ class BaseDetectionDataset(Dataset, ABC):
     def __init__(
         self,
         cfg: DictConfig,
-        data_dir: str,
+        data_dir: Optional[str],
         transform: Optional[Callable[[Image.Image, dict], dict]] = None,
         bbox_format: Literal["coco", "yolo", "pascal_voc"] = None,
         split: Literal["train", "val", "test"] = "train",
@@ -46,22 +46,26 @@ class BaseDetectionDataset(Dataset, ABC):
         self.bbox_format = bbox_format
         self.split = split
 
-        logger.info(f"Loading {self.__class__.__name__} from {data_dir} (split: {split})")
+        if self.data_dir:
+            logger.info(f"Loading {self.__class__.__name__} from {self.data_dir} (split: {split})")
+        else:
+            logger.info(f"Loading {self.__class__.__name__} from HF (split: {split})")
+            
         (
             self.image_paths,
             self.annotations,
             self.labels,
-            _,  # image_ids
+            _,  
         ) = self._load_data()
         logger.info(f"Loaded {len(self.image_paths)} images with annotations")
 
-        self.cfg.mapping = load_mapping(self.data_dir, cfg.data.num_classes)
+        if self.data_dir:
+            self.cfg.mapping = load_mapping(self.data_dir, cfg.data.num_classes)
 
-        # Validate image extensions
-        for image_path in self.image_paths:
-            if not image_path.endswith(tuple(cfg.data.valid_image_extensions)):
-                logger.error(f"Invalid image format: {image_path}")
-                raise ValueError(f"Invalid image format: {image_path}")
+            for image_path in self.image_paths:
+                if not image_path.endswith(tuple(cfg.data.valid_image_extensions)):
+                    logger.error(f"Invalid image format: {image_path}")
+                    raise ValueError(f"Invalid image format: {image_path}")
 
         logger.info(
             f"Dataset initialized with mode: {self.image_type}, " f"transforms: {'applied' if transform else 'none'}, "

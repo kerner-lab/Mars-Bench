@@ -11,6 +11,8 @@ dataset_path: /data/hkerner/MarsBench/NewDatasets  # Base path to datasets
 few_shot: null               # Support [null, 1, 2, 5, 10, 15, 20]
 partition: null              # Supported: [null, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1]
 test_after_training: true    # Run test after training completes
+load_from_hf: False          # Whether to load model from Hugging Face Hub (if true, repo_id must be specified)
+repo_id: ""                  # Hugging Face repository ID when load_from_hf=True
 
 # Model settings
 model_name: resnet101        # Name of the model architecture
@@ -21,7 +23,7 @@ checkpoint_path: null        # Path to a .ckpt file to resume training
 detection_confidence_threshold: 0.3
 
 # Output settings
-output_path: /scratch/vmaliviy/Marsbench/outputs         # Directory for outputs (models, logs, metrics)
+output_path: /scratch/ihmehta/Marsbench/outputs         # Directory for outputs (models, logs, metrics)
 prediction_output_path: null # Directory for prediction outputs; defaults to output_path/predictions
 
 defaults:

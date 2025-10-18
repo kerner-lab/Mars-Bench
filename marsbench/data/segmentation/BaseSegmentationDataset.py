@@ -39,7 +39,7 @@ class BaseSegmentationDataset(Dataset, ABC):
     def __init__(
         self,
         cfg: DictConfig,
-        data_dir: str,
+        data_dir: Optional[str],
         transform: Optional[Callable[[Image.Image], torch.Tensor]] = None,
         split: Literal["train", "val", "test"] = "train",
     ):
@@ -53,15 +53,19 @@ class BaseSegmentationDataset(Dataset, ABC):
                 "Defaulting to RGB."
             )
             self.image_type = "RGB"
-        self.data_dir = Path(data_dir)
+        self.data_dir = Path(data_dir) if data_dir else None
         self.transform = transform
         self.split = split
 
-        logger.info(f"Loading {self.__class__.__name__} from {data_dir} (split: {split})")
+        if self.data_dir:
+            logger.info(f"Loading {self.__class__.__name__} from {data_dir} (split: {split})")
+        else:
+            logger.info(f"Loading {self.__class__.__name__} from HF (split: {split})")
         self.image_paths, self.gts = self._load_data()
         logger.info(f"Loaded {len(self.image_paths)} image-mask pairs")
 
-        self.cfg.mapping = load_mapping(self.data_dir, cfg.data.num_classes)
+        if self.data_dir:
+            self.cfg.mapping = load_mapping(self.data_dir, cfg.data.num_classes)
 
         if len(self.image_paths) == 0 or len(self.gts) == 0:
             logging.error("No matching image and mask pairs found")
@@ -71,10 +75,12 @@ class BaseSegmentationDataset(Dataset, ABC):
             logger.info("One-hot encoded masks detected. Converting to class indices.")
             logger.warning("Expected shape of ground truths: [N, C, H, W]")
 
-        for image_path in self.image_paths:
-            if not image_path.endswith(tuple(cfg.data.valid_image_extensions)):
-                logger.error(f"Invalid image format: {image_path}")
-                raise ValueError(f"Invalid image format: {image_path}")
+        
+        if self.data_dir:
+            for image_path in self.image_paths:
+                if not image_path.endswith(tuple(cfg.data.valid_image_extensions)):
+                    logger.error(f"Invalid image format: {image_path}")
+                    raise ValueError(f"Invalid image format: {image_path}")
 
         logger.info(
             f"Dataset initialized with mode: {self.image_type}, " f"transforms: {'applied' if transform else 'none'}, "

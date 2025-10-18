@@ -63,7 +63,7 @@ class BaseClassificationDataset(Dataset, ABC):
         if self.data_dir:
             logger.info(f"Loading {self.__class__.__name__} from {self.data_dir}")
         else:
-             logger.info(f"Loading {self.__class__.__name__} from HF")
+            logger.info(f"Loading {self.__class__.__name__} from HF")
         self.image_paths, self.gts = self._load_data()
         logger.info(f"Loaded {len(self.image_paths)} images with {len(set(self.gts))} unique classes")
 

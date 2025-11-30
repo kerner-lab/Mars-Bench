@@ -2,15 +2,6 @@
 
 MarsBench is a comprehensive benchmarking framework for computer vision tasks on Mars surface images. It provides a unified platform for training, evaluating, and comparing machine learning models across various Mars datasets for classification, segmentation, and detection tasks.
 
-## Features
-
-- **Unified Interface**: Common framework for training and evaluating models across multiple datasets
-- **Model Zoo**: Pre-configured implementations of popular vision models (ResNet, ViT, Swin Transformer, UNet, etc.)
-- **Dataset Collection**: Standardized access to Mars image datasets with consistent APIs
-- **Experiment Tracking**: Integration with WandB, TensorBoard, and CSV loggers
-- **Flexible Configuration**: Hydra-based configuration system for experiment management
-- **Reproducibility**: Automatic tracking of random seeds and experiment configurations
-- **Extensibility**: Easy addition of new models and datasets
 
 ## Installation
 
@@ -22,25 +13,9 @@ pip install -e .
 pip install -e ".[dev]"
 ```
 
-## Quick Start
+## Usage
 
-To train a model:
-
-```bash
-python -m marsbench.main mode=train task=classification model_name=resnet18 data_name=domars16k dataset_path=/path/to/dataset
-```
-
-To test a model:
-
-```bash
-python -m marsbench.main mode=test task=classification model_name=resnet18 data_name=domars16k checkpoint_path=outputs/classification/domars16k/resnet18/YYYY-MM-DD_HH-MM-SS/checkpoints/best.ckpt
-```
-
-To generate predictions:
-
-```bash
-python -m marsbench.main mode=predict task=classification model_name=resnet18 data_name=domars16k checkpoint_path=outputs/classification/domars16k/resnet18/YYYY-MM-DD_HH-MM-SS/checkpoints/best.ckpt
-```
+For detailed usage examples and commands, please refer to [examples.md](examples.md).
 
 ## Configuration
 
@@ -63,7 +38,7 @@ Override any configuration parameter using the command line:
 python -m marsbench.main task=classification model_name=resnet18 data_name=domars16k training.batch_size=64 training.optimizer.lr=0.0005
 ```
 
-## Supported Datasets
+## Datasets
 
 ### Classification
 - Atmospheric Dust Classification EDR
@@ -151,10 +126,3 @@ marsbench/
 3. Implement the `_initialize_model` method
 4. Add model configuration in `configs/model/classification/` or `configs/model/segmentation/`
 5. Register the model in `marsbench/models/__init__.py`
-
-## Testing
-
-Run the test suite:
-
-```bash
-pytest tests/

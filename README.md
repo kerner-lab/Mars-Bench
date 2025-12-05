@@ -9,7 +9,7 @@ HOW TO USE IMAGES IN THIS README
 -->
 
 <p align="center">
-  <img src="assets/mars-bench-title.png" alt="Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks" width="70%">
+  <img src="assets/mars-bench-title.png" alt="Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks" width="95%">
 </p>
 
 <p align="center">

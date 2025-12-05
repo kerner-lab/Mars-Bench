@@ -9,7 +9,7 @@ HOW TO USE IMAGES IN THIS README
 -->
 
 <p align="center">
-  <img src="assets/mars-bench-title.png" alt="Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks" width="95%">
+  <img src="assets/mars-bench-title.png" alt="Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks" width="97%">
 </p>
 
 <p align="center">
@@ -38,7 +38,7 @@ HOW TO USE IMAGES IN THIS README
 ## Introduction
 
 <p align="center">
-  <img src="assets/mars-bench-teaser.png" alt="Representative samples from selected Mars-Bench datasets, from all three task categories." width="80%">
+  <img src="assets/mars-bench-teaser.png" alt="Representative samples from selected Mars-Bench datasets, from all three task categories." width="90%">
 </p>
 
 Mars-Bench introduces the first standardized benchmark for Mars science, covering 20 datasets across classification, segmentation, and object-detection tasks using both orbital and rover imagery. It includes a wide range of geologic features; such as craters, cones, boulders, and frost to support comprehensive evaluation.

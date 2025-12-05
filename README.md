@@ -1,7 +1,67 @@
-# MarsBench
+<!--
+HOW TO USE IMAGES IN THIS README
+================================
+- Create an `assets/` folder at the repo root (next to `README.md`).
+- Save your title/banner image as `assets/mars-bench-title.png`.
+- Save your teaser figure as `assets/mars-bench-teaser.png`.
+- Commit these images to the repo. GitHub will automatically render them here.
+- If you prefer different filenames or paths, just update the `src` paths below.
+-->
 
-MarsBench is a comprehensive benchmarking framework for computer vision tasks on Mars surface images. It provides a unified platform for training, evaluating, and comparing machine learning models across various Mars datasets for classification, segmentation, and detection tasks.
+<p align="center">
+  <img src="assets/mars-bench-title.png" alt="Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks" width="70%">
+</p>
 
+<p align="center">
+  <a href="https://arxiv.org/pdf/2510.24010">
+    <img src="https://img.shields.io/badge/arXiv-2510.24010-b31b1b.svg" alt="arXiv">
+  </a>
+  <a href="https://mars-bench.github.io/">
+    <img src="https://img.shields.io/badge/Project%20Page-Mars--Bench-blue.svg" alt="Project Page">
+  </a>
+  <a href="https://huggingface.co/collections/mars-bench/mars-bench-vision-models-2510">
+    <img src="https://img.shields.io/badge/🤗%20HuggingFace-Models-yellow.svg" alt="HuggingFace Models">
+  </a>
+  <a href="https://zenodo.org/records/1234567">
+    <img src="https://img.shields.io/badge/Zenodo-Dataset-8c0000.svg" alt="Zenodo Dataset">
+  </a>
+  <a href="https://github.com/mars-bench/Mars-Bench">
+    <img src="https://img.shields.io/badge/Code-GitHub-black.svg" alt="Code">
+  </a>
+  <a href="https://mars-bench.github.io/#leaderboard">
+    <img src="https://img.shields.io/badge/🏆%20Leaderboard-Mars--Bench-orange.svg" alt="Leaderboard">
+  </a>
+</p>
+
+<p align="center">
+  <strong>Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks</strong>
+</p>
+
+<p align="center">
+  Mirali Purohit<sup>1,3</sup>, Bimal Gajera<sup>1*</sup>, Vatsal Malaviya<sup>1*</sup>, Irish Mehta<sup>1*</sup>,<br/>
+  Kunal Kasodekar<sup>1</sup>, Jacob Adler<sup>2</sup>, Steven Lu<sup>3</sup>, Umaa Rebbapragada<sup>3</sup>, Hannah Kerner<sup>1</sup>
+</p>
+
+<p align="center">
+  <sup>1</sup>School of Computing and Augmented Intelligence, Arizona State University, Tempe, AZ, USA<br/>
+  <sup>2</sup>School of Earth and Space Exploration, Arizona State University, Tempe, AZ, USA<br/>
+  <sup>3</sup>Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA, USA<br/>
+  <sup>*</sup>Equal Contribution
+</p>
+
+---
+
+## Introduction
+
+Mars-Bench is a real-world benchmark for evaluating foundation models on Mars science tasks, spanning classification, segmentation, and object detection across 20 curated datasets derived from orbital and rover imagery. Each dataset has been validated by domain experts to ensure data quality and supports standardized splits and metadata for reproducible evaluation.
+
+<p align="center">
+  <img src="assets/mars-bench-teaser.png" alt="Representative samples and tasks in Mars-Bench" width="80%">
+</p>
+
+Mars-Bench provides ready-to-use datasets and baseline evaluations using models pre-trained on natural images, Earth observation data, and state-of-the-art vision–language models. Results suggest that Mars-specific foundation models may offer advantages over general-domain counterparts, motivating further exploration of domain-adapted pre-training for planetary science.
+
+---
 
 ## Installation
 

@@ -13,11 +13,11 @@ HOW TO USE IMAGES IN THIS README
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2510.24010">📄 Paper</a> |
-  <a href="https://mars-bench.github.io/">🌐 Project Website</a> |
-  <a href="https://huggingface.co/collections/Mirali33/mars-bench-models">🤗 HuggingFace</a> |
-  <a href="https://zenodo.org/communities/mars-bench/records">🗄️ Zenodo</a> |
-  <a href="https://huggingface.co/spaces/Mirali33/Mars-Bench">🏆 LeaderBoard</a> |
+  <a href="https://arxiv.org/abs/2510.24010">📄 Paper</a>  | 
+  <a href="https://mars-bench.github.io/">🌐 Project Website</a>  | 
+  <a href="https://huggingface.co/collections/Mirali33/mars-bench-models">🤗 HuggingFace</a>  | 
+  <a href="https://zenodo.org/communities/mars-bench/records">🗄️ Zenodo</a>  | 
+  <a href="https://huggingface.co/spaces/Mirali33/Mars-Bench">🏆 LeaderBoard</a>  | 
   <a href="https://huggingface.co/collections/Mirali33/mars-bench-models">🤖 Baseline Models</a>
 </p>
 
@@ -38,7 +38,7 @@ HOW TO USE IMAGES IN THIS README
 ## Introduction
 
 <p align="center">
-  <img src="assets/mars-bench-teaser.png" alt="Representative samples and tasks in Mars-Bench" width="80%">
+  <img src="assets/mars-bench-teaser.png" alt="Representative samples from selected Mars-Bench datasets, from all three task categories." width="80%">
 </p>
 
 Mars-Bench introduces the first standardized benchmark for Mars science, covering 20 datasets across classification, segmentation, and object-detection tasks using both orbital and rover imagery. It includes a wide range of geologic features; such as craters, cones, boulders, and frost to support comprehensive evaluation.

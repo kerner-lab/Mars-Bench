@@ -43,6 +43,10 @@ HOW TO USE IMAGES IN THIS README
 
 Mars-Bench introduces the first standardized benchmark for Mars science, covering 20 datasets across classification, segmentation, and object-detection tasks using both orbital and rover imagery. It includes a wide range of geologic features; such as craters, cones, boulders, and frost to support comprehensive evaluation.
 
+<p align="center">
+  <img src="assets/mars-bench-datasets.png" alt="verview of Mars-Bench datasets across all three task categories. To distinguish the benchmarked versions from their original sources, all dataset names are prefixed with 'mb-', which indicates Mars-Bench. Observation sources are labeled as O (Orbiter) and R (Rover)." width="90%">
+</p>
+
 ---
 
 ## Installation
@@ -57,114 +61,24 @@ pip install -e ".[dev]"
 
 ## Usage
 
-For detailed usage examples and commands, please refer to [examples.md](examples.md).
+Mars-Bench uses a Hydra-based CLI with `marsbench.main` as the entry point:
 
-## Configuration
+- **Quickstart examples**: Refer to `EXAMPLES.md` for end-to-end commands for classification, segmentation, and detection, including how to select datasets and models.
+- **Configs and benchmarking scripts**: Explore the `marsbench/configs/` directory for all task/model/data configurations and the `benchmark/` folder for scripts used to reproduce the paper’s experiments and figures.
 
-MarsBench uses Hydra for configuration management. The main configuration is located in `marsbench/configs/config.yaml` with task-specific configurations in the respective subdirectories:
+### Citation
 
-- `configs/model/classification/`: Classification model configurations
-- `configs/model/segmentation/`: Segmentation model configurations
-- `configs/model/detection/`: Detection model configurations
-- `configs/data/classification/`: Classification dataset configurations
-- `configs/data/segmentation/`: Segmentation dataset configurations
-- `configs/data/detection/`: Detection dataset configurations
-- `configs/training/`: Training hyperparameters and settings
-- `configs/transforms/`: Image transformation settings
-- `configs/logger/`: Logging configuration
-- `configs/callbacks/`: PyTorch Lightning callback settings
-
-Override any configuration parameter using the command line:
-
-```bash
-python -m marsbench.main task=classification model_name=resnet18 data_name=domars16k training.batch_size=64 training.optimizer.lr=0.0005
-```
-
-## Datasets
-
-### Classification
-- Atmospheric Dust Classification EDR
-- Atmospheric Dust Classification RDR
-- Change Classification CTX
-- Change Classification HiRISE
-- DoMars16k
-- Frost Classification
-- Landmark Classification
-- Surface Classification
-
-### Segmentation
-- Boulder Segmentation
-- ConeQuest Segmentation
-- Crater Binary Segmentation
-- Crater Multi Segmentation
-- MMLS
-- MarsSegMER
-- MarsSegMSL
-- Mask2Former
-- S5Mars
-
-### Detection
-- Boulder Detection
-- ConeQuest Detection
-- Dust Devil Detection
-
-## Supported Models
-
-### Classification
-- ResNet101
-- Vision Transformer (ViT)
-- Swin Transformer
-- InceptionV3
-- SqueezeNet
-
-### Segmentation
-- U-Net
-- DeepLab
-- DPT
-- Mask2Former
-- SegFormer
-
-### Detection
-- Faster R-CNN
-- RetinaNet
-- SSD
-
-## Project Structure
+If you use ConeQuest in your research, please use the following citation:
 
 ```
-marsbench/
-├── marsbench/              # Main package
-|   ├── configs/            # Hydra configuration files
-|   ├── data/               # Dataset implementations
-│   │   ├── classification/ # Classification datasets
-│   │   ├── segmentation/   # Segmentation datasets
-│   │   └── detection/      # Detection datasets
-│   ├── models/             # Model implementations
-│   │   ├── classification/ # Classification models
-│   │   └── segmentation/   # Segmentation models
-│   │   └── detection/      # Detection models
-│   ├── training/           # Training utilities
-│   ├── utils/              # Helper functions
-│   └── main.py             # Entry point
-├── tests/                  # Unit tests
-├── examples/               # Example scripts
-└── outputs/                # Generated outputs (predictions, checkpoints, logs)
+@inproceedings{purohit2025marsbench,
+    title={Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks},
+    author={Mirali Purohit and Bimal Gajera and Vatsal Malaviya and Irish Mehta and Kunal Sunil Kasodekar and Jacob Adler and Steven Lu and Umaa Rebbapragada and Hannah Kerner},
+    booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+    year={2025},
+    url={https://arxiv.org/pdf/2510.24010}
+}
 ```
 
-## Development
-
-### Adding a New Dataset
-
-1. Create a new dataset implementation in `marsbench/data/classification/` or `marsbench/data/segmentation/`
-2. Inherit from `BaseClassificationDataset` or `BaseSegmentationDataset`
-3. Implement the `_load_data` method
-4. Add dataset configuration in `configs/data/classification/` or `configs/data/segmentation/`
-5. Register the dataset in `marsbench/data/__init__.py`
-
-### Adding a New Model
-
-1. Create a new model implementation in `marsbench/models/classification/` or `marsbench/models/segmentation/`
-2. Inherit from `BaseClassificationModel` or `BaseSegmentationModel`
-3. Implement the `_initialize_model` method
-4. Add model configuration in `configs/model/classification/` or `configs/model/segmentation/`
-5. Register the model in `marsbench/models/__init__.py`
+### Contact Information
+Please reach out to Mirali Purohit [mpurohi3@asu.edu](mpurohi3@asu.edu), if you have any queries or issues regarding Mars-Bench.

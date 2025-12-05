@@ -38,13 +38,15 @@ HOW TO USE IMAGES IN THIS README
 ## Introduction
 
 <p align="center">
-  <img src="assets/mars-bench-teaser.png" alt="Representative samples from selected Mars-Bench datasets, from all three task categories." width="90%">
+  <img src="assets/mars-bench-teaser.png" alt="Representative samples from selected Mars-Bench datasets, from all three task categories." width="90%"><br>
+  <em>Representative samples from selected Mars-Bench datasets from all three task categories.</em>
 </p>
 
 Mars-Bench introduces the first standardized benchmark for Mars science, covering 20 datasets across classification, segmentation, and object-detection tasks using both orbital and rover imagery. It includes a wide range of geologic features; such as craters, cones, boulders, and frost to support comprehensive evaluation.
 
 <p align="center">
-  <img src="assets/mars-bench-datasets.png" alt="verview of Mars-Bench datasets across all three task categories. To distinguish the benchmarked versions from their original sources, all dataset names are prefixed with 'mb-', which indicates Mars-Bench. Observation sources are labeled as O (Orbiter) and R (Rover)." width="90%">
+  <img src="assets/mars-bench-datasets.png" alt="Overview of Mars-Bench datasets across all three task categories. To distinguish the benchmarked versions from their original sources, all dataset names are prefixed with 'mb-', which indicates Mars-Bench. Observation sources are labeled as O (Orbiter) and R (Rover)." width="90%"><br>
+  <em>Overview of Mars-Bench datasets across all three task categories. To distinguish the benchmarked versions from their original sources, all dataset names are prefixed with 'mb-', which indicates Mars-Bench. Observation sources are labeled as O (Orbiter) and R (Rover).</em>
 </p>
 
 ---

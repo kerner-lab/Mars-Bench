@@ -13,24 +13,12 @@ HOW TO USE IMAGES IN THIS README
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/pdf/2510.24010">
-    <img src="https://img.shields.io/badge/arXiv-2510.24010-b31b1b.svg" alt="arXiv">
-  </a>
-  <a href="https://mars-bench.github.io/">
-    <img src="https://img.shields.io/badge/Project%20Page-Mars--Bench-blue.svg" alt="Project Page">
-  </a>
-  <a href="https://huggingface.co/collections/mars-bench/mars-bench-vision-models-2510">
-    <img src="https://img.shields.io/badge/🤗%20HuggingFace-Models-yellow.svg" alt="HuggingFace Models">
-  </a>
-  <a href="https://zenodo.org/records/1234567">
-    <img src="https://img.shields.io/badge/Zenodo-Dataset-8c0000.svg" alt="Zenodo Dataset">
-  </a>
-  <a href="https://mars-bench.github.io/#leaderboard">
-    <img src="https://img.shields.io/badge/🏆%20Leaderboard-Mars--Bench-orange.svg" alt="Leaderboard">
-  </a>
-  <a href="https://huggingface.co/collections/Mirali33/mars-bench-models">
-    <img src="https://img.shields.io/badge/Code-GitHub-black.svg" alt="Models">
-  </a>
+  <a href="https://arxiv.org/abs/2510.24010">📄 Paper</a> |
+  <a href="https://mars-bench.github.io/">🌐 Project Website</a> |
+  <a href="https://huggingface.co/collections/Mirali33/mars-bench-models">🤗 HuggingFace</a> |
+  <a href="https://zenodo.org/communities/mars-bench/records">🗄️ Zenodo</a> |
+  <a href="https://huggingface.co/spaces/Mirali33/Mars-Bench">🏆 LeaderBoard</a> |
+  <a href="https://huggingface.co/collections/Mirali33/mars-bench-models">🤖 Baseline Models</a>
 </p>
 
 <p align="center">

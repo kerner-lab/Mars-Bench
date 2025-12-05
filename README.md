@@ -25,16 +25,12 @@ HOW TO USE IMAGES IN THIS README
   <a href="https://zenodo.org/records/1234567">
     <img src="https://img.shields.io/badge/Zenodo-Dataset-8c0000.svg" alt="Zenodo Dataset">
   </a>
-  <a href="https://github.com/mars-bench/Mars-Bench">
-    <img src="https://img.shields.io/badge/Code-GitHub-black.svg" alt="Code">
-  </a>
   <a href="https://mars-bench.github.io/#leaderboard">
     <img src="https://img.shields.io/badge/🏆%20Leaderboard-Mars--Bench-orange.svg" alt="Leaderboard">
   </a>
-</p>
-
-<p align="center">
-  <strong>Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks</strong>
+  <a href="https://huggingface.co/collections/Mirali33/mars-bench-models">
+    <img src="https://img.shields.io/badge/Code-GitHub-black.svg" alt="Models">
+  </a>
 </p>
 
 <p align="center">
@@ -53,13 +49,11 @@ HOW TO USE IMAGES IN THIS README
 
 ## Introduction
 
-Mars-Bench is a real-world benchmark for evaluating foundation models on Mars science tasks, spanning classification, segmentation, and object detection across 20 curated datasets derived from orbital and rover imagery. Each dataset has been validated by domain experts to ensure data quality and supports standardized splits and metadata for reproducible evaluation.
-
 <p align="center">
   <img src="assets/mars-bench-teaser.png" alt="Representative samples and tasks in Mars-Bench" width="80%">
 </p>
 
-Mars-Bench provides ready-to-use datasets and baseline evaluations using models pre-trained on natural images, Earth observation data, and state-of-the-art vision–language models. Results suggest that Mars-specific foundation models may offer advantages over general-domain counterparts, motivating further exploration of domain-adapted pre-training for planetary science.
+Mars-Bench introduces the first standardized benchmark for Mars science, covering 20 datasets across classification, segmentation, and object-detection tasks using both orbital and rover imagery. It includes a wide range of geologic features; such as craters, cones, boulders, and frost to support comprehensive evaluation.
 
 ---
 

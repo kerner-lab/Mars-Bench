@@ -2,6 +2,6 @@ name: S5Mars
 status: test
 data_dir: ${oc.decode:${oc.select:dataset_path, .}}/mb-s5mars/
 partition_csv: ${oc.decode:${oc.select:dataset_path, .}}/mb-s5mars/partitions/${oc.select:partition, 0.01}x_partition.csv
-num_classes: 10 # Background + 9 classes
+num_classes: 9 # Background + 8 classes
 image_type: rgb
 task: segmentation
